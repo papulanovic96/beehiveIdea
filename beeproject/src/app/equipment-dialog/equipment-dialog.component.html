@@ -1,0 +1,13 @@
+<div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Назив</mat-label>
+          <input disabled [(ngModel)]="data.name" name="name" matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Количина</mat-label>
+          <input disabled [(ngModel)]="data.quantity" name="quantity" matInput>
+        </mat-form-field>
+        <br>
+        <button mat-flat-button color="warn" (click)="onNoClick()" style="float: left;">Затвори</button>
+      </div>

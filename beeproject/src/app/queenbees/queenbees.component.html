@@ -1,0 +1,93 @@
+<html>
+<head>
+</head>
+<a class="arrow-right" href="/#"><span><mat-icon>home</mat-icon></span></a>
+<body>
+<!-- Heading -->
+<mat-toolbar style="margin-bottom: 2%; color: rgba(233, 164, 58, 0.8); background-color: #444">
+  <span class="newC"> Производња матица</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<div class="example-container" style="color: rgba(233, 164, 58, 0.8); background-color: #444">
+    <mat-form-field appearance="fill">
+        <mat-label>Дан</mat-label>
+        <mat-select [(ngModel)]="calendarNew.day" name="day"> 
+          <mat-option *ngFor="let c of days" value="{{c}}">{{c}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Редни број дана</mat-label>
+        <mat-select [(ngModel)]="calendarNew.dayNumber" name="dayNumber"> 
+          <mat-option *ngFor="let d of daysNumbers"value="{{d}}">{{d}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill"> 
+        <mat-label>Сат</mat-label>
+        <mat-select [(ngModel)]="calendarNew.hour" name="hour">
+          <mat-option *ngFor="let h of hour" value="{{h}}">{{h}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+    <mat-form-field appearance="fill"> 
+        <mat-label>Активност</mat-label>
+        <mat-select [(ngModel)]="calendarNew.activity" name="activity">
+          <mat-option *ngFor="let ac of activity" value="{{ac}}">{{ac}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+    <mat-form-field appearance="fill"> 
+        <mat-label>Пчелар</mat-label>
+        <mat-select>
+          <mat-option value="mladen">Младен</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill"> 
+        <mat-label>Јентер апарат</mat-label>
+        <mat-select>
+          <mat-option value="10"> 10 </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+    <button mat-flat-button color="success" (click)="create()" type="submit" style="float: right;">Додај</button>
+  </div>
+<!-- Grid -->
+
+      <table mat-table [dataSource]="activityCalendar" class="mat-elevation-z8" style="width: 80%;">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="Дан" class="bb-king">
+          <th mat-header-cell *matHeaderCellDef  class="bb-king2"> Дан </th>
+          <td mat-cell *matCellDef="let item"  class="bb-king"> {{item.day}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="Р. бр. дана" class="bb-king">
+          <th mat-header-cell *matHeaderCellDef  class="bb-king2"> Р. бр. дана </th>
+          <td mat-cell *matCellDef="let item" class="bb-king"> {{item.dayNumber}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Сат" class="bb-king">
+          <th mat-header-cell *matHeaderCellDef class="bb-king2"> Сат </th>
+          <td mat-cell *matCellDef="let item" class="bb-king"> {{item.hour}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Активност" class="bb-king">
+          <th mat-header-cell *matHeaderCellDef class="bb-king2"> Активност </th>
+          <td mat-cell *matCellDef="let item" class="bb-king"> {{item.activity}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+</body>
+</html>

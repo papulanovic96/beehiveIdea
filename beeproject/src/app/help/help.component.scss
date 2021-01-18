@@ -1,0 +1,89 @@
+body {
+  padding-bottom: 15%;
+  padding-left: 14%;
+  padding-right: 14%;
+  padding-top: 5%;
+}
+.arrow-right {
+  color: burlywood;
+  background-color: #444;
+  box-shadow: 0 0 3px 2px rgba(0,0,0,0.8);
+  height: 100px;
+  left: -50px;
+  position: absolute;
+  top: -50px;
+  width: 100px;
+  -webkit-transform: rotate(-45deg);
+}
+.arrow-right span {
+  left: 35px;
+  top: 68px;
+  position: absolute;
+  width: 80px;
+}
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+section {
+  padding-top: 2%;
+  display: table;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 190px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.newC {
+  color:  rgba(233, 164, 58, 0.8);
+  font: Raleway 300;
+  font-size: 26px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-card {
+  background-color: rgb(245, 245, 245);
+}
+
+/* Grid Format */
+/*Formats the text inside the image*/
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #20263f;
+}
+.container {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+}
+
+.inputQ {
+  width: 100%;
+}
+mat-expansion-panel, mat-expansion-panel-header, mat-panel-title {
+  color:  rgba(233, 164, 58, 0.8); 
+  background-color: #444
+}

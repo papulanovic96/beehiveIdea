@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<a class="arrow-right" href="/#"><span><mat-icon>home</mat-icon></span></a>
+<body>
+<!-- Heading -->
+<mat-toolbar style="margin-bottom: 2%;  color:  rgba(233, 164, 58, 0.8); background-color: #444">
+  <span class="newC"> Опрема</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<mat-card>
+<!-- Grid -->
+<section class="container">
+ 
+  <div *ngFor="let a of list">
+      <img (click)="openEquipment(a)" src="{{a.url}}" alt="First description" />
+      <span (click)="openEquipment(a)" class="description">{{a.name}}</span>
+  </div>
+</section>
+</mat-card>
+
+</body>
+</html>

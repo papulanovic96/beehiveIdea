@@ -1,0 +1,43 @@
+    
+    <section style="display: flex;">
+    <table style="margin-right: 2% ;">
+      <thead>
+        <td><button style="width: 100%;"  mat-flat-button color="warn">Датум прегледа</button>  </td>
+        <td><button style="width: 100%;"  mat-flat-button color="warn">Тип прегледа</button> </td>
+        <td><button style="width: 100%;"  mat-flat-button color="warn">Пчелар</button> </td>
+      </thead>
+      <tbody *ngFor="let a of list">
+        <td *ngIf="a.beehiveInWR == data.beehiveInWR"><button style="width: 100%;"  mat-flat-button color="primary">{{a.reviewDate}}</button></td>
+        <td *ngIf="a.beehiveInWR == data.beehiveInWR"><button style="width: 100%;"  mat-flat-button color="primary">{{a.reviewType}}</button></td>
+        <td *ngIf="a.beehiveInWR == data.beehiveInWR"><button style="width: 100%;"  mat-flat-button color="primary">{{a.beekeeperInWR}}</button></td>
+      </tbody>
+    </table>
+    <br>
+    <mat-card>
+    <mat-form-field appearance="fill" class="label-class">
+      <mat-label>Број кошнице</mat-label>
+      <input disabled [(ngModel)]="data.beehiveInWR" name="beehiveInWR" matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="label-class" appearance="fill">
+        <mat-label>Врста прегледа</mat-label>
+        <input [(ngModel)]="newEvidence.reviewType" name="reviewType" matInput>
+      </mat-form-field>
+      <br>
+        <mat-form-field appearance="fill" class="label-class">
+            <mat-label>Датум прегледа</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <br>     
+          <mat-form-field class="label-class" appearance="fill">
+            <mat-label>Датум следећег прегледа</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+          <br>      
+      <button mat-flat-button color="primary" (click)="evidence(data.beehiveInWR)" type="submit" style="float: right;">Евидентирај</button>
+      <button mat-flat-button color="warn" (click)="onNoClick()" style="float: left;">Затвори</button></mat-card>
+    </section>

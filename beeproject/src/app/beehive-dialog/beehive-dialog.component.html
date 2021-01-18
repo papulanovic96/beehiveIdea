@@ -1,0 +1,23 @@
+<div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Број реда</mat-label>
+      <input [(ngModel)]="newBeehiveDTO.boxNumber" name="boxNmber" matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Тип</mat-label>
+      <mat-select [(ngModel)]="newBeehiveDTO.type" name="type"> 
+        <mat-option value="lr">ЛР</mat-option>
+        <mat-option value="db">ДБ</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Пчелињак</mat-label>
+        <mat-select [(ngModel)]="newBeehiveDTO.hiveInApiary" name="hiveInApiary">
+          <mat-option *ngFor="let a of list" value="{{a.id}}">{{a.id}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <button mat-flat-button color="primary" (click)="newBeehive()" type="submit" style="float: right;">Додај</button>
+    <button mat-flat-button color="warn" (click)="onNoClick()" style="float: left;">Затвори</button>
+  </div>
